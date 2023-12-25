@@ -18,7 +18,7 @@ app.use(express.json({ extended: false}));
 app.get("/api/articles/:name", async (req,res) => {
     try {
         const artilename = req.params.name;
-    const client = await MongoClient.connect('mongodb://localhost:27017')
+    const client = await MongoClient.connect("mongodb://127.0.0.1")
     const db = client.db("mernblog");
     const articlesinfo = await db
     .collection("articles")
